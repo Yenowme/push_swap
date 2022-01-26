@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:26:27 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/01/26 21:18:37 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/01/26 21:56:56 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,10 @@ typedef struct s_ps
 	t_stack	b;
 }	t_ps;
 
+void	err_exit(char *str);
+void	free_double_str(char **str);
+void	parse_arg(int argc, char **argv);
+void	stack_add_back(char *str);
+void	init_stack(t_ps *stack);
 
 #endif

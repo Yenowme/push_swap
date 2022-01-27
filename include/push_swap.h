@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:26:27 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/01/26 21:56:56 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/01/27 18:24:50 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,15 @@ typedef struct s_ps
 {
 	t_stack	a;
 	t_stack	b;
+	int		cnt;
 }	t_ps;
 
-void	err_exit(char *str);
-void	free_double_str(char **str);
-void	parse_arg(int argc, char **argv);
-void	stack_add_back(char *str);
-void	init_stack(t_ps *stack);
+void			err_exit(char *str);
+void			free_double_str(char **str);
+void			parse_arg(int argc, char **argv, t_ps *stack);
+
+void			init_stack(t_ps *stack, int argc);
+void			stack_init_data(char *str, t_stack *stack);
+t_stack_node	*new_node(int	data);
 
 #endif

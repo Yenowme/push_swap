@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:25:14 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/01/28 17:25:40 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/01/28 20:22:34 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,13 @@ int	main(int argc, char **argv)
 	init_stack(&stack, argc);
 	parse_arg(argc, argv, &stack);
 	print_stack(stack);
-	print_reverse(stack);
-	rotate_reverse(&(stack.a));
+	commend(&stack, "sa");
+	commend(&stack, "pb");
+	commend(&stack, "pb");
+	commend(&stack, "pb");
+	commend(&stack, "sa");
+	commend(&stack, "pb");
+	commend(&stack, "pb");
+	commend(&stack, "pb");
 	print_stack(stack);
-	print_reverse(stack);
 }

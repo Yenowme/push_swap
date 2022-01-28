@@ -6,24 +6,25 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 18:34:55 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/01/28 19:55:23 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/01/28 20:25:27 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	swap_top(t_stack *stack)
+int	swap_top(t_stack *stack)
 {
 	int	tmp;
 
 	if (stack->cnt < 2)
-		return ;
+		return (0);
 	tmp = stack->head->data;
 	stack->head->data = stack->head->next->data;
 	stack->head->next->data = tmp;
+	return (1);
 }
 
-void	push(t_stack *to, t_stack *from)
+int	push(t_stack *to, t_stack *from)
 {
 	t_stack_node	*new;
 	t_stack_node	*old;
@@ -31,7 +32,7 @@ void	push(t_stack *to, t_stack *from)
 	old = to->head;
 	new = from->head;
 	if (!new)
-		return ;
+		return (0);
 	if (!old)
 		to->tail = new;
 	else
@@ -48,16 +49,16 @@ void	push(t_stack *to, t_stack *from)
 		from->tail = NULL;
 	}
 	new->next = old;
-	to->cnt++;
 	from->cnt--;
+	return (to->cnt++);
 }
 
-void	rotate(t_stack *stack)
+int	rotate(t_stack *stack)
 {
 	t_stack_node	*tmp;
 
 	if (stack->cnt < 2)
-		return ;
+		return (0);
 	if (stack->cnt < 3)
 		return (swap_top(stack));
 	tmp = stack->head;
@@ -67,14 +68,15 @@ void	rotate(t_stack *stack)
 	stack->head->prev = NULL;
 	stack->tail = tmp;
 	tmp->next = NULL;
+	return (1);
 }
 
-void	rotate_reverse(t_stack *stack)
+int	rotate_reverse(t_stack *stack)
 {
 	t_stack_node	*tmp;
 
 	if (stack->cnt < 2)
-		return ;
+		return (0);
 	if (stack->cnt < 3)
 		return (swap_top(stack));
 	tmp = stack->tail;
@@ -84,10 +86,32 @@ void	rotate_reverse(t_stack *stack)
 	stack->head = tmp;
 	tmp->prev = NULL;
 	stack->tail->next = NULL;
+	return (1);
 }
 
-void	commend(char	*cmd)
+void	commend(t_ps *ps, char	*cmd)
 {
-	if (ft_strcmp(cmd, "sa"))
-		printf("hi");
+	if (!ft_strcmp(cmd, "sa") && swap_top(&(ps->a)))
+		print_cmd("sa");
+	if (!ft_strcmp(cmd, "sb") && swap_top(&(ps->b)))
+		print_cmd("sb");
+	if (!ft_strcmp(cmd, "ss") && swap_top(&(ps->a)) && swap_top(&(ps->b)))
+		print_cmd("ss");
+	if (!ft_strcmp(cmd, "pa") && push(&(ps->a), &(ps->b)))
+		print_cmd("pa");
+	if (!ft_strcmp(cmd, "pb") && push(&(ps->b), &(ps->a)))
+		print_cmd("pb");
+	if (!ft_strcmp(cmd, "ra") && rotate(&(ps->a)))
+		print_cmd("ra");
+	if (!ft_strcmp(cmd, "rb") && rotate(&(ps->b)))
+		print_cmd("rb");
+	if (!ft_strcmp(cmd, "rr") && rotate(&(ps->a)) && rotate(&(ps->b)))
+		print_cmd("rr");
+	if (!ft_strcmp(cmd, "rra") && rotate_reverse(&(ps->a)))
+		print_cmd("rra");
+	if (!ft_strcmp(cmd, "rrb") && rotate_reverse(&(ps->b)))
+		print_cmd("rrb");
+	if (!ft_strcmp(cmd, "rrr") && rotate_reverse(&(ps->a))
+		&& rotate_reverse(&(ps->b)))
+		print_cmd("rrr");
 }

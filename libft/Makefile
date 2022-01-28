@@ -6,7 +6,7 @@
 #    By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 19:05:29 by jeong-yena        #+#    #+#              #
-#    Updated: 2022/01/19 19:14:17 by jeong-yena       ###   ########.fr        #
+#    Updated: 2022/01/28 19:50:07 by jeong-yena       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS	=	ft_isprint.c ft_itoa.c ft_memccpy.c ft_memchr.c ft_memcmp.c \
   			ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c \
   			ft_tolower.c ft_toupper.c ft_bzero.c ft_isalpha.c ft_isdigit.c \
 			ft_isalnum.c ft_isascii.c ft_atoi.c ft_calloc.c ft_putchar.c \
-			ft_putstr.c ft_putnbr.c ft_putun.c \
+			ft_putstr.c ft_putnbr.c ft_putun.c ft_strcmp.c\
 			ft_strlowcase.c ft_strupcase.c \
 			ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
 			ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c get_next_line.c

@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:26:27 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/01/27 18:24:50 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/01/27 23:09:38 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,10 @@ void			parse_arg(int argc, char **argv, t_ps *stack);
 void			init_stack(t_ps *stack, int argc);
 void			stack_init_data(char *str, t_stack *stack);
 t_stack_node	*new_node(int	data);
+
+void			swap_top(t_stack *stack);
+void			push(t_stack *dst, t_stack *src);
+void			rotate(t_stack *stack);
+void			rotate_reverse(t_stack *stack);
 
 #endif

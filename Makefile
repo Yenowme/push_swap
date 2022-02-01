@@ -6,7 +6,7 @@
 #    By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 18:54:27 by jeong-yena        #+#    #+#              #
-#    Updated: 2022/01/31 14:23:29 by jeong-yena       ###   ########.fr        #
+#    Updated: 2022/02/01 15:07:08 by jeong-yena       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ clean :
 fclean : clean
 	@echo "\n\033[31m----Delete everything 👌!----"
 	make -C $(LIBFT_DIR) fclean
-	$(RM) $(NAME) a.out.dSYM
+	$(RM) $(NAME) $(NAME).dSYM
 	@echo "\n\033[31m----fclean done 👌!----\n"
 
 re : fclean all

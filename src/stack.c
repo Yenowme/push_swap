@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:24:31 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/01/27 22:24:35 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/01/31 12:32:34 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,9 @@ void	stack_init_data(char *str, t_stack *stack)
 	stack_add_back(stack, new_node(data));
 }
 
-void	init_stack(t_ps *stack, int argc)
+void	init_stack(t_ps *stack)
 {
 	ft_bzero(stack, sizeof(t_ps));
-	stack->cnt = argc - 1;
 }
 
 t_stack_node	*new_node(int	data)

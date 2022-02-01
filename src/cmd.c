@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 18:34:55 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/01/28 20:25:27 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/01/31 18:24:09 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	push(t_stack *to, t_stack *from)
 	}
 	new->next = old;
 	from->cnt--;
-	return (to->cnt++);
+	return (++(to->cnt));
 }
 
 int	rotate(t_stack *stack)
@@ -89,7 +89,7 @@ int	rotate_reverse(t_stack *stack)
 	return (1);
 }
 
-void	commend(t_ps *ps, char	*cmd)
+void	cmd(t_ps *ps, char	*cmd)
 {
 	if (!ft_strcmp(cmd, "sa") && swap_top(&(ps->a)))
 		print_cmd("sa");

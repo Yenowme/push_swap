@@ -6,12 +6,11 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:55:03 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/01/28 20:04:48 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/01/31 18:19:42 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
 
 void	err_exit(char *str)
 {
@@ -36,4 +35,16 @@ void	free_double_str(char **str)
 	free(str);
 }
 
+void	set_pb(t_stack stack, t_pb *pb)
+{
+	int	tmp;
 
+	pb->pb_s = stack.head->data;
+	pb->pb_l = stack.head->next->data;
+	if (pb->pb_s > pb->pb_l)
+	{
+		tmp = pb->pb_l;
+		pb->pb_l = pb->pb_s;
+		pb->pb_s = tmp;
+	}
+}

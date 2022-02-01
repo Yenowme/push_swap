@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:53:57 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/01/27 18:26:55 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/01/31 12:32:19 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ static int	is_split_and_valid(char *str)
 	return (is_split);
 }
 
-
 void	parse_arg(int argc, char **argv, t_ps *stack)
 {
 	int		i;
@@ -55,4 +54,5 @@ void	parse_arg(int argc, char **argv, t_ps *stack)
 		else
 			stack_init_data(argv[i], &stack->a);
 	}
+	stack->cnt = stack->a.cnt;
 }

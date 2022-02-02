@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:24:31 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/02/01 16:43:59 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/02 22:42:45 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	stack_init_data(char *str, t_stack *stack)
 	while (tmp)
 	{
 		if (tmp->data == data)
-			err_exit("duplicate data\n");
+			err_exit();
 		tmp = tmp->next;
 	}
 	stack_add_back(stack, new_node(data));

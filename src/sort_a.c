@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 18:48:09 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/02/02 22:37:46 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/02 22:53:55 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static void	sort_some_a(t_ps *stack, int cnt)
 {
+	printf("sort_som_a\n");
 	if (cnt < 2)
 		return ;
 	if (stack->a.head->data > stack->a.head->next->data)
@@ -27,6 +28,7 @@ static void	sort_some_a(t_ps *stack, int cnt)
 		if (stack->a.head->data > stack->a.head->next->data)
 			cmd(stack, "sa");
 	}
+	print_stack(*stack);
 }
 
 void	divde_a(t_ps *stack, int cnt, t_pb *pb)
@@ -34,6 +36,7 @@ void	divde_a(t_ps *stack, int cnt, t_pb *pb)
 	int				i;
 	t_stack_node	*tmp;
 
+	printf("divide_a\n");
 	i = 0;
 	while (i < cnt)
 	{
@@ -55,12 +58,14 @@ void	divde_a(t_ps *stack, int cnt, t_pb *pb)
 		}
 		i++;
 	}
+	print_stack(*stack);
 }
 
 void	rotate_a(t_ps *stack, t_pb *pb)
 {
 	int	i;
 
+	printf("rotate_a\n");
 	i = 0;
 	while (i < pb->ra_cnt && i < pb->rb_cnt)
 	{
@@ -77,6 +82,7 @@ void	rotate_a(t_ps *stack, t_pb *pb)
 		cmd(stack, "rrb");
 		i++;
 	}
+	print_stack(*stack);
 }
 
 void	a_to_b(t_ps	*stack, int cnt)
@@ -86,8 +92,6 @@ void	a_to_b(t_ps	*stack, int cnt)
 	ft_bzero(&pb, sizeof(t_pb));
 	if (cnt < 4)
 		return (sort_some_a(stack, cnt));
-	set_pb(stack->a, &pb);
-	divde_a(stack, cnt, &pb);
 	rotate_a(stack, &pb);
 	a_to_b(stack, pb.ra_cnt);
 	b_to_a(stack, pb.rb_cnt);

@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:26:27 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/01/31 18:32:57 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/02 22:42:54 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ typedef struct s_pb
 }	t_pb;
 
 /*utils*/
-void			err_exit(char *str);
+void			err_exit(void);
 void			free_double_str(char **str);
 void			parse_arg(int argc, char **argv, t_ps *stack);
 void			print_cmd(char	*str);

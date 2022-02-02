@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:25:14 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/02/02 22:37:54 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/02 22:48:21 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,5 @@ int	main(int argc, char **argv)
 	init_stack(&stack);
 	parse_arg(argc, argv, &stack);
 	a_to_b(&stack, stack.cnt);
+	//print_stack(stack);
 }

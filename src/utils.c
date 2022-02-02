@@ -6,16 +6,15 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:55:03 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/02/02 22:38:08 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/02 22:54:37 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	err_exit(char *str)
+void	err_exit(void)
 {
 	ft_putstr_fd("Error\n", STDERR_FILENO);
-	ft_putstr_fd(str, STDERR_FILENO);
 	exit(1);
 }
 
@@ -39,6 +38,7 @@ void	set_pb(t_stack stack, t_pb *pb)
 {
 	int	tmp;
 
+	printf("l: %d s : %d\n", pb->pb_l, pb->pb_s);
 	pb->pb_s = stack.head->data;
 	pb->pb_l = stack.head->next->data;
 	if (pb->pb_s > pb->pb_l)

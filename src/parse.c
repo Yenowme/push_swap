@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:53:57 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/01/31 12:32:19 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/02 22:42:40 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ static int	is_split_and_valid(char *str)
 			is_split = TRUE;
 		if (str[i] == '-' || str[i] == '+')
 			if (!ft_isdigit(str[i + 1]))
-				err_exit("is not number\n");
+				err_exit();
 		i++;
 	}
 	if (str[i] != '\0')
-		err_exit("is not number\n");
+		err_exit();
 	return (is_split);
 }
 

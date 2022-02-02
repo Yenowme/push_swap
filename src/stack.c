@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:24:31 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/01/31 12:32:34 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/01 16:43:59 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	stack_init_data(char *str, t_stack *stack)
 	int				data;
 	t_stack_node	*tmp;
 
+	//TODO : data 정수형 범위 검사
 	data = ft_atoi(str);
 	tmp = stack->head;
 	while (tmp)

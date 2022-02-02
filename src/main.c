@@ -6,13 +6,12 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:25:14 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/01/31 14:35:45 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/02 22:37:54 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-//debug
 void	print_stack(t_ps ps)
 {
 	t_stack_node	*a;
@@ -24,13 +23,21 @@ void	print_stack(t_ps ps)
 	{
 		if (a)
 		{
-			printf("a: %d ", a->data);
+			printf("a: %4d ", a->data);
 			a = a->next;
+		}
+		else
+		{
+			printf("        ");
 		}
 		if (b)
 		{
-			printf("b: %d ", b->data);
+			printf("b: %4d ", b->data);
 			b = b->next;
+		}
+		else
+		{
+			printf("        ");
 		}
 		printf("\n");
 	}
@@ -70,5 +77,4 @@ int	main(int argc, char **argv)
 	init_stack(&stack);
 	parse_arg(argc, argv, &stack);
 	a_to_b(&stack, stack.cnt);
-	print_stack(stack);
 }

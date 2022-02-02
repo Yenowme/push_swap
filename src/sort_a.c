@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 18:48:09 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/01/31 18:47:43 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/02 22:37:46 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 static void	sort_some_a(t_ps *stack, int cnt)
 {
+	if (cnt < 2)
+		return ;
 	if (stack->a.head->data > stack->a.head->next->data)
 		cmd(stack, "sa");
-	if (cnt == 3 && stack->a.tail->data < stack->a.tail->prev->data )
+	if (cnt == 3 && stack->a.head->next->next->data 
+		< stack->a.head->next->data )
 	{
 		cmd(stack, "ra");
 		cmd(stack, "sa");
@@ -28,11 +31,10 @@ static void	sort_some_a(t_ps *stack, int cnt)
 
 void	divde_a(t_ps *stack, int cnt, t_pb *pb)
 {
-	int	i;
+	int				i;
 	t_stack_node	*tmp;
 
 	i = 0;
-	printf("%d %d\n", pb->pb_l, pb->pb_s);
 	while (i < cnt)
 	{
 		tmp = stack->a.head;
@@ -86,11 +88,8 @@ void	a_to_b(t_ps	*stack, int cnt)
 		return (sort_some_a(stack, cnt));
 	set_pb(stack->a, &pb);
 	divde_a(stack, cnt, &pb);
-	a_to_b(stack, pb.ra_cnt);
-	print_stack(*stack);
-	b_to_a(stack, pb.rb_cnt);
-	print_stack(*stack);
-	b_to_a(stack, pb.pb_cnt - pb.rb_cnt);
-	print_stack(*stack);
 	rotate_a(stack, &pb);
+	a_to_b(stack, pb.ra_cnt);
+	b_to_a(stack, pb.rb_cnt);
+	b_to_a(stack, pb.pb_cnt - pb.rb_cnt);
 }

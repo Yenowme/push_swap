@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 17:13:28 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/01/31 18:53:20 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/02 22:37:00 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ static void	sort_some_b(t_ps *stack, int cnt)
 		return (cmd(stack, "pa"));
 	if (stack->b.head->data < stack->b.head->next->data)
 		cmd(stack, "sb");
-	if (cnt == 3 && stack->b.tail->data > stack->b.tail->prev->data )
+	if (cnt == 3 && stack->b.head->next->next->data 
+		< stack->b.head->next->data )
 	{
 		cmd(stack, "rb");
 		cmd(stack, "sb");
@@ -41,7 +42,7 @@ void	divde_b(t_ps *stack, int cnt, t_pb *pb)
 	i = 0;
 	while (i < cnt)
 	{
-		tmp = stack->a.head;
+		tmp = stack->b.head;
 		if (tmp->data < pb->pb_s)
 		{
 			cmd(stack, "rb");
@@ -94,9 +95,6 @@ void	b_to_a(t_ps	*stack, int cnt)
 	divde_b(stack, cnt, &pb);
 	a_to_b(stack, pb.pa_cnt - pb.ra_cnt);
 	rotate_b(stack, &pb);
-	print_stack(*stack);
 	a_to_b(stack, pb.ra_cnt);
-	print_stack(*stack);
 	b_to_a(stack, pb.rb_cnt);
-	print_stack(*stack);
 }

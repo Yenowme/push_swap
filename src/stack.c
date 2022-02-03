@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:24:31 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/02/02 22:42:45 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/03 18:30:45 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,18 @@ void	stack_add_back(t_stack *stack, t_stack_node *new)
 
 void	stack_init_data(char *str, t_stack *stack)
 {
-	int				data;
+	long long	data;
 	t_stack_node	*tmp;
 
-	//TODO : data 정수형 범위 검사
+	if (ft_strlen(str) > 11)
+		err_exit();
 	data = ft_atoi(str);
+	if (data > 2147483647 || data < -2147483648)
+		err_exit();
 	tmp = stack->head;
 	while (tmp)
 	{
-		if (tmp->data == data)
+		if (tmp->data == (int)data)
 			err_exit();
 		tmp = tmp->next;
 	}

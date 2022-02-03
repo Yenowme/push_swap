@@ -2,6 +2,7 @@ a.out
 push_swap
 checker_mac
 push_swap_
+.log
 
 # Prerequisites
 *.d

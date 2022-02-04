@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:26:27 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/02/02 22:42:54 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/04 22:03:35 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,23 +43,27 @@ typedef struct s_ps
 	int		cnt;
 }	t_ps;
 
-typedef struct s_pb
+typedef struct s_pv
 {
 	int	ra_cnt;
 	int	rb_cnt;
 	int	pb_cnt;
 	int	pa_cnt;
-	int	pb_s;
-	int	pb_l;
-	int	idx;
-}	t_pb;
+	int	pv_s;
+	int	pv_l;
+	int	pv_s_cnt;
+	int	pv_l_cnt;
+	int	*arr;
+}	t_pv;
 
 /*utils*/
 void			err_exit(void);
 void			free_double_str(char **str);
 void			parse_arg(int argc, char **argv, t_ps *stack);
 void			print_cmd(char	*str);
-void			set_pb(t_stack stack, t_pb *pb);
+
+/*pivot*/
+void	set_pv(t_stack *stack, int cnt, t_pv *pv);
 
 /*stack*/
 void			init_stack(t_ps *stack);

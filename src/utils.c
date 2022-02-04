@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:55:03 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/02/02 23:18:17 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/04 22:21:34 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,3 @@ void	free_double_str(char **str)
 	free(str);
 }
 
-void	set_pb(t_stack stack, t_pb *pb)
-{
-	int	tmp;
-
-	pb->pb_s = stack.head->data;
-	pb->pb_l = stack.head->next->data;
-	if (pb->pb_s > pb->pb_l)
-	{
-		tmp = pb->pb_l;
-		pb->pb_l = pb->pb_s;
-		pb->pb_s = tmp;
-	}
-	//printf("l: %d s : %d\n", pb->pb_l, pb->pb_s);
-}

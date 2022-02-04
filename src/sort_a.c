@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 18:48:09 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/02/02 23:17:56 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/04 22:22:50 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	sort_some_a(t_ps *stack, int cnt)
 	//print_stack(*stack);
 }
 
-void	divde_a(t_ps *stack, int cnt, t_pb *pb)
+void	divde_a(t_ps *stack, int cnt, t_pv *pb)
 {
 	int				i;
 	t_stack_node	*tmp;
@@ -41,7 +41,7 @@ void	divde_a(t_ps *stack, int cnt, t_pb *pb)
 	while (i < cnt)
 	{
 		tmp = stack->a.head;
-		if (tmp->data >= pb->pb_l)
+		if (tmp->data >= pb->pv_l)
 		{
 			cmd(stack, "ra");
 			pb->ra_cnt++;
@@ -50,7 +50,7 @@ void	divde_a(t_ps *stack, int cnt, t_pb *pb)
 		{
 			cmd(stack, "pb");
 			pb->pb_cnt++;
-			if (tmp->data >= pb->pb_s)
+			if (tmp->data >= pb->pv_s)
 			{
 				cmd(stack, "rb");
 				pb->rb_cnt++;
@@ -61,7 +61,7 @@ void	divde_a(t_ps *stack, int cnt, t_pb *pb)
 	//print_stack(*stack);
 }
 
-void	rotate_a(t_ps *stack, t_pb *pb)
+void	rotate_a(t_ps *stack, t_pv *pb)
 {
 	int	i;
 
@@ -87,13 +87,13 @@ void	rotate_a(t_ps *stack, t_pb *pb)
 
 void	a_to_b(t_ps	*stack, int cnt)
 {
-	t_pb			pb;
+	t_pv			pb;
 
-	ft_bzero(&pb, sizeof(t_pb));
+	ft_bzero(&pb, sizeof(t_pv));
 	if (cnt < 4)
 		return (sort_some_a(stack, cnt));
-	set_pb(stack->a, &pb);
-	divde_a(stack, cnt, &pb);	
+	set_pv(&(stack->a), cnt, &pb);
+	divde_a(stack, cnt, &pb);
 	rotate_a(stack, &pb);
 	a_to_b(stack, pb.ra_cnt);
 	b_to_a(stack, pb.rb_cnt);

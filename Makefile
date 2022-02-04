@@ -6,7 +6,7 @@
 #    By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 18:54:27 by jeong-yena        #+#    #+#              #
-#    Updated: 2022/02/01 15:07:08 by jeong-yena       ###   ########.fr        #
+#    Updated: 2022/02/04 22:21:43 by jeong-yena       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ INCS_DIR				= ./include/
 SRCS_DIR				= ./src/
 INCS					= -I include
 
-SRC						= main.c parse.c stack.c utils.c sort_a.c sort_b.c cmd.c
+SRC						= main.c parse.c stack.c utils.c sort_a.c sort_b.c cmd.c pivot.c
 SRCS					= $(addprefix $(SRCS_DIR), $(SRC))
 OBJS					= $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:25:14 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/02/04 22:31:54 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/05 21:00:46 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,15 @@ int	main(int argc, char **argv)
 
 	init_stack(&stack);
 	parse_arg(argc, argv, &stack);
-	a_to_b(&stack, stack.cnt);
+	if (is_ascending(stack.a, stack.cnt))
+		return (0);
+	else if (is_descending(stack.a, stack.cnt))
+		sort_des(&stack, stack.cnt);
+	else if (stack.cnt <= 3)
+		sort_3(&stack);
+	//else if (stack.cnt <= 5)
+		//sort_5(&stack);
+	else if (stack.cnt)
+		a_to_b(&stack, stack.cnt);
 	//print_stack(stack);
 }

@@ -6,7 +6,7 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:26:27 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/02/05 20:46:38 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/05 22:03:18 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void			b_to_a(t_ps	*stack, int cnt);
 int				is_ascending(t_stack stack, int cnt);
 int				is_descending(t_stack stack, int cnt);
 void			sort_3(t_ps *stack);
+void			sort_5(t_ps *stack);
 void			sort_des(t_ps *stack, int cnt);
 
 void			print_stack(t_ps ps);

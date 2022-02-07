@@ -6,68 +6,22 @@
 /*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:25:14 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/02/05 23:04:25 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/07 18:03:05 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	print_stack(t_ps ps)
+void	free_stack(t_ps stack)
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
+	t_stack_node	*tmp;
 
-	a = ps.a.head;
-	b = ps.b.head;
-	while (a || b)
+	while (stack.a.head)
 	{
-		if (a)
-		{
-			printf("a: %4d ", a->data);
-			a = a->next;
-		}
-		else
-		{
-			printf("        ");
-		}
-		if (b)
-		{
-			printf("b: %4d ", b->data);
-			b = b->next;
-		}
-		else
-		{
-			printf("        ");
-		}
-		printf("\n");
+		tmp = stack.a.head;
+		stack.a.head = stack.a.head->next;
+		free(tmp);
 	}
-	printf("---\n");
-	printf("cnt a:%d, b:%d\n\n", ps.a.cnt, ps.b.cnt);
-}
-
-void	print_reverse(t_ps ps)
-{
-	t_stack_node	*a;
-	t_stack_node	*b;
-
-	a = ps.a.tail;
-	b = ps.b.tail;
-	while (a || b)
-	{
-		if (a)
-		{
-			printf("a: %d", a->data);
-			a = a->prev;
-		}
-		if (b)
-		{
-			printf("b: %d", b->data);
-			b = b->prev;
-		}
-		printf("\n");
-	}
-	printf("---\n");
-	printf("cnt a:%d, b:%d\n\n", ps.a.cnt, ps.b.cnt);
 }
 
 int	main(int argc, char **argv)
@@ -77,7 +31,10 @@ int	main(int argc, char **argv)
 	init_stack(&stack);
 	parse_arg(argc, argv, &stack);
 	if (is_ascending(stack.a, stack.cnt))
+	{
+		free_stack(stack);
 		return (0);
+	}
 	else if (is_descending(stack.a, stack.cnt) && stack.cnt != 5)
 		sort_des(&stack, stack.cnt);
 	else if (stack.cnt == 5)
@@ -86,5 +43,5 @@ int	main(int argc, char **argv)
 		sort_3(&stack);
 	else if (stack.cnt)
 		a_to_b(&stack, stack.cnt);
-	//print_stack(stack);
+	free_stack(stack);
 }

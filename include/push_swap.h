@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
+/*   By: yejeong <yejeong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:26:27 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/02/05 22:03:18 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/08 16:44:48 by yejeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void			parse_arg(int argc, char **argv, t_ps *stack);
 void			print_cmd(char	*str);
 
 /*pivot*/
-void	set_pv(t_stack *stack, int cnt, t_pv *pv);
+void			set_pv(t_stack *stack, int cnt, t_pv *pv);
 
 /*stack*/
 void			init_stack(t_ps *stack);
@@ -81,13 +81,10 @@ void			a_to_b(t_ps	*stack, int cnt);
 void			b_to_a(t_ps	*stack, int cnt);
 
 /*sort*/
-
 int				is_ascending(t_stack stack, int cnt);
 int				is_descending(t_stack stack, int cnt);
 void			sort_3(t_ps *stack);
 void			sort_5(t_ps *stack);
 void			sort_des(t_ps *stack, int cnt);
-
-void			print_stack(t_ps ps);
 
 #endif

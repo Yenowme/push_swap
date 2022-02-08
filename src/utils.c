@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
+/*   By: yejeong <yejeong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:55:03 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/02/04 22:21:34 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/08 16:40:30 by yejeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,3 @@ void	free_double_str(char **str)
 		free(str[i++]);
 	free(str);
 }
-

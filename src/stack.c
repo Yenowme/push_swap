@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
+/*   By: yejeong <yejeong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:24:31 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/02/03 18:30:45 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/08 16:40:24 by yejeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	stack_add_back(t_stack *stack, t_stack_node *new)
 
 void	stack_init_data(char *str, t_stack *stack)
 {
-	long long	data;
+	long long		data;
 	t_stack_node	*tmp;
 
 	if (ft_strlen(str) > 11)

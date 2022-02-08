@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
+/*   By: yejeong <yejeong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 18:48:09 by jeong-yena        #+#    #+#             */
-/*   Updated: 2022/02/04 22:22:50 by jeong-yena       ###   ########.fr       */
+/*   Updated: 2022/02/08 16:41:26 by yejeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 static void	sort_some_a(t_ps *stack, int cnt)
 {
-	//printf("sort_som_a\n");
 	if (cnt < 2)
 		return ;
 	if (stack->a.head->data > stack->a.head->next->data)
 		cmd(stack, "sa");
-	if (cnt == 3 && stack->a.head->next->next->data 
-		< stack->a.head->next->data )
+	if (cnt == 3 && stack->a.head->next->next->data
+		< stack->a.head->next->data)
 	{
 		cmd(stack, "ra");
 		cmd(stack, "sa");
@@ -28,7 +27,6 @@ static void	sort_some_a(t_ps *stack, int cnt)
 		if (stack->a.head->data > stack->a.head->next->data)
 			cmd(stack, "sa");
 	}
-	//print_stack(*stack);
 }
 
 void	divde_a(t_ps *stack, int cnt, t_pv *pb)
@@ -36,7 +34,6 @@ void	divde_a(t_ps *stack, int cnt, t_pv *pb)
 	int				i;
 	t_stack_node	*tmp;
 
-	//printf("divide_a\n");
 	i = 0;
 	while (i < cnt)
 	{
@@ -58,14 +55,12 @@ void	divde_a(t_ps *stack, int cnt, t_pv *pb)
 		}
 		i++;
 	}
-	//print_stack(*stack);
 }
 
 void	rotate_a(t_ps *stack, t_pv *pb)
 {
 	int	i;
 
-	//printf("rotate_a\n");
 	i = 0;
 	while (i < pb->ra_cnt && i < pb->rb_cnt)
 	{
@@ -82,7 +77,6 @@ void	rotate_a(t_ps *stack, t_pv *pb)
 		cmd(stack, "rrb");
 		i++;
 	}
-	//print_stack(*stack);
 }
 
 void	a_to_b(t_ps	*stack, int cnt)
